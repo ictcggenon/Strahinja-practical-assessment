@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ictcg.restdatetime.model.restDateAndTime;
+import com.ictcg.restdatetime.model.JsonDateAndTime;
+import com.ictcg.restdatetime.model.RestDateAndTime;
 import com.ictcg.restdatetime.service.IRestDateTime;
 
 
@@ -14,15 +15,34 @@ import com.ictcg.restdatetime.service.IRestDateTime;
 public class RestDateTimeController {
 	
 	@Autowired
-	public IRestDateTime restDateTimeService;
+	private IRestDateTime restDateTimeService;
 
-	@RequestMapping(value = "/getDate", method = RequestMethod.GET)
-	public restDateAndTime getDateAndTime() {
-		try {
-			return restDateTimeService.getRestDateAndTime();
+	@RequestMapping(value = "/getUnformattedDate", method = RequestMethod.GET)
+	public RestDateAndTime getDateAndTime() {
+		try { // ? TODO: set return status ?
+			return restDateTimeService.getRestUnformattedDateAndTime();
 		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+			e.printStackTrace(); // ? TODO: set return status ?
+			return null; 
+		}
+	}	
+	
+	@RequestMapping(value = "/getStringDate", method = RequestMethod.GET)
+	public String getStringDateAndTime() {
+		try { // ? TODO: set return status ?
+			return restDateTimeService.getRestStringDateAndTime();
+		} catch (Exception e) {
+			e.printStackTrace(); // ? TODO: set return status ?
+			return null; 
+		}
+	}	
+	@RequestMapping(value = "/getDate", method = RequestMethod.GET)
+	public JsonDateAndTime getJsonDateAndTime() {
+		try { // ? TODO: set return status ?
+			return restDateTimeService.getRestJsonDateAndTime();
+		} catch (Exception e) {
+			e.printStackTrace(); // ? TODO: set return status ?
+			return null; 
 		}
 	}	
 	
