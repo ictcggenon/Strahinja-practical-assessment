@@ -13,7 +13,7 @@ import com.ictcg.restdatetime.service.IRestDateTime;
 @RestController
 @RequestMapping(value = "date")
 public class RestDateTimeController {
-	
+	//TODO add isUS parameter if true send as am/pm format
 	@Autowired
 	private IRestDateTime restDateTimeService;
 

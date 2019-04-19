@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class restDateAndTime implements Serializable{
-
+//TODO same with lombok here
 	/**
 	 * 
 	 */

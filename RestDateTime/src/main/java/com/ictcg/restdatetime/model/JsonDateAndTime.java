@@ -7,6 +7,7 @@ import java.time.LocalTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class JsonDateAndTime implements Serializable{
+	//TODO read about project lombok and use it here for all fields, const, equals and hashCode, toString
 	
 	/**
 	 * 
